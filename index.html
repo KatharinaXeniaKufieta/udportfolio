@@ -30,7 +30,14 @@
   <body>
     <header class="container">
       <div class="row">
-        <div class="col-xs-3 picture"><a href="/"><img src="img/profilepic-min.jpg"></a></div>
+        <div class="col-xs-3 picture">
+            <picture>
+              <img
+                alt="Picture of Katharina"
+                src="img/profilepic-100-1x.jpg 1x"
+                srcset="img/profilepic-100-1x.jpg 1x, img/profilepic-100-2x.jpg 2x">
+            </picture>
+        </div>
         <div class="col-xs-9"><p>Katharina Kufieta<br><span>Software Engineer</span></p></div>
       </div>
     </header>
@@ -43,25 +50,45 @@
       <div class="content">
         <ul class="row">
           <li class="col-xs-12">
-            <img style="width: 100px;" src="img/bugs.png">
+            <picture>
+              <img
+                alt="Picture of Katharinas bugs game"
+                src="img/bugs-100-1x.png 1x"
+                srcset="img/bugs-100-1x.png 1x, img/bugs-100-2x.png 2x">
+            </picture>
             <a href="project-2048.html">Arcade Game Bugs</a>
             <p>Bugs is a variant of the arcade game Frogger. I practiced my JavaScript skills in this project.</p>
           </li>
 
           <li class="col-xs-12">
-            <img style="width: 100px;" src="img/webperformance.png">
+            <picture>
+              <img
+                alt="Picture of PageSpeed Insights giving results."
+                src="img/webperformance-100-1x.png 1x"
+                srcset="img/webperformance-100-1x.png 1x, img/webperformance-100-2x.png 2x">
+            </picture>
             <a href="project-webperf.html">Website Performance Optimization</a>
             <p>This project was all about achieving a high score on PageSpeed Insights.</p>
           </li>
 
           <li class="col-xs-12">
-            <img style="width: 100px;" src="img/seams.png">
+            <picture>
+              <img
+                alt="Example picture of a seam found by the algorithms"
+                src="img/seams-100-1x.png 1x"
+                srcset="img/seams-100-1x.png 1x, img/seams-100-2x.png 2x">
+            </picture>
             <a href="project-mobile.html">Content Aware Resizing of Images (CARI)</a>
             <p>I am implementing a web based application for content aware resizing of images. This is a long term project and work is still in progress.</p>
           </li>
 
           <li class="col-xs-12">
-            <img style="width: 100px;" src="img/portfolio.png">
+            <picture>
+              <img
+                alt="Picture of my first portfolio website"
+                src="img/portfolio-100-1x.png 1x"
+                srcset="img/portfolio-100-1x.png 1x, img/portfolio-100-2x.png 2x">
+            </picture>
             <a href="views/pizza.html">My first portfolio website</a>
             <p>This was my first front end project. I built a portfolio from scratch, based on a design mockup.</p>
           </li>
