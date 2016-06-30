@@ -39,7 +39,43 @@ module.exports = function(grunt) {
           expand: true,
           src: ['*.{gif,jpg,png}'],
           cwd: 'img_src/',
+          dest: 'img_src2/'
+        }]
+      }
+    },
+
+    /* Compress images */
+    imagemin: {
+      dist: {
+      options: {
+        optimizationLevel: 5
+      },
+      files: [{
+          expand: true,
+          src: ['*.{gif,jpg,png}'],
+          cwd: 'img_src2/',
           dest: 'img/'
+      }]
+    }
+   },
+
+    /* Minify JavaScript */
+    uglify: {
+      build: {
+        src: 'js/perfmatters.js',
+        dest: 'js/perfmatters.min.js'
+      }
+    },
+
+    /* Minify CSS */
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'css/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'css/',
+          ext: '.min.css'
         }]
       }
     },
@@ -47,7 +83,7 @@ module.exports = function(grunt) {
     /* Clear out the images directory if it exists */
     clean: {
       dev: {
-        src: ['img'],
+        src: ['img', 'img_scr2'],
       },
     },
 
@@ -55,7 +91,7 @@ module.exports = function(grunt) {
     mkdir: {
       dev: {
         options: {
-          create: ['img']
+          create: ['img', 'img_scr2']
         },
       },
     },
@@ -76,6 +112,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images', 'uglify', 'cssmin', 'imagemin']);
 
 };
